@@ -1,0 +1,19 @@
+package Concepts;
+class MainTest2{
+	int x=33;
+	void demo() {
+		System.out.println("running demo");
+	}
+}
+public class NonStaticExamples {
+	int a=55;
+	void disp(){
+		System.out.println("Running disp");
+	}
+public static void main(String[] args) {
+	System.out.println(new NonStaticExamples().a);
+	new NonStaticExamples().disp();
+	System.out.println(new MainTest2().x);
+	new MainTest2().demo();
+}
+}
