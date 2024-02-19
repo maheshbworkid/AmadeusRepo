@@ -1,0 +1,10 @@
+package Concepts;
+
+public class BlocksExample {
+	static {
+		System.out.println("Running static block");
+	}
+public static void main(String[] args) {
+	
+}
+}

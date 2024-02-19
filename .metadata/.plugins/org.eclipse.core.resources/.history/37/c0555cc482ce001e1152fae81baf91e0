@@ -1,0 +1,22 @@
+package ExceptionHandling;
+
+public class InterruptedExc {
+	void stuff() throws InterruptedException{
+	doStuff();	
+	}
+	
+	void doStuff() throws InterruptedException{
+	domorestuff();	
+	}
+	
+	void domorestuff() throws InterruptedException{
+		System.out.println("test");
+		Thread.sleep(1000);
+		
+	}
+public static void main(String[] args) throws InterruptedException{
+	InterruptedExc i1=new InterruptedExc();
+	i1.stuff();
+	
+}
+}

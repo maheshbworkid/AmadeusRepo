@@ -1,0 +1,19 @@
+package collectionsPractice;
+
+import java.util.ArrayList;
+import java.util.HashSet;
+
+public class HashSet1 {
+
+	public static void main(String[] args) {
+	ArrayList l1=new ArrayList();
+	l1.add(10);
+	l1.add(30);
+	l1.add('z');
+	l1.add("posting");
+	l1.add(99);
+	System.out.println(l1);
+
+
+	}
+}

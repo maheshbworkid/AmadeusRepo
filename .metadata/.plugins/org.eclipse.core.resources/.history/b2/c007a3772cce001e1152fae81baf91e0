@@ -1,0 +1,15 @@
+package Concepts;
+
+public class PassByValue {
+	
+	void demo() {
+		System.out.println("Running demo");
+	}
+	static void disp(int x) {
+		System.out.println(x);
+		System.out.println("Running passby value");
+	}
+public static void main(String[] args) {
+	disp(22);
+}
+}

@@ -1,0 +1,8 @@
+package collectionsPractice;
+
+public class SortedMap1 {
+
+	public static void main(String[] args) {
+	TreeMap t1=new TreeMap();
+	}
+}

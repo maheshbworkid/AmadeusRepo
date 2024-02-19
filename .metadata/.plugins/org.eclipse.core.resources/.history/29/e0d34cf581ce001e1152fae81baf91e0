@@ -1,0 +1,17 @@
+package ExceptionHandling;
+
+import java.io.FileNotFoundException;
+import java.io.PrintWriter;
+
+public class ThrowsKeyword {
+public static void main(String[] args) {
+	try{
+		PrintWriter pt=new PrintWriter("abc.txt");
+	}
+	catch(FileNotFoundException f) {
+		pt.print("test");
+	}
+	
+	
+}
+}

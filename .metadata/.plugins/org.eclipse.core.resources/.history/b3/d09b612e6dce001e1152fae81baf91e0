@@ -1,0 +1,22 @@
+package Concepts;
+
+final public class ImmutableClassCreation {
+	
+	private int x=10;
+	ImmutableClassCreation(int x){
+		this.x=x;
+	}
+	
+	public ImmutableClassCreation modify(int z) {
+		if(this.x==z) {
+			return this;
+		}
+		else {
+			return new ImmutableClassCreation(z);
+		}
+	}
+public static void main(String[] args) {
+	ImmutableClassCreation i1=new ImmutableClassCreation(10);
+	ImmutableClassCreation i2=i1.modify(200);
+}
+}

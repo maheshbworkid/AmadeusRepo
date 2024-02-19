@@ -1,0 +1,18 @@
+package Concepts;
+
+import java.lang.reflect.Method;
+
+public class GetClassExample {
+	
+	void disp() {
+		System.out.println("methods");
+	}
+public static void main(String[] args) {
+	Object obj=new String("durga");
+	Class c1=obj.getClass();
+Method[] m1=c1.getDeclaredMethods();
+for(Method ele:m1) {
+	System.out.println(ele.getName());
+}
+}
+}

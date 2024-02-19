@@ -1,0 +1,14 @@
+package ExceptionHandling;
+
+public class ThrowKeyword {
+	static ArithmeticException e=new ArithmeticException();
+public static void main(String[] args) {
+	System.out.println("hello");
+	
+System.out.println(10/0);
+System.out.println("est");
+	throw e;
+	
+	
+}
+}

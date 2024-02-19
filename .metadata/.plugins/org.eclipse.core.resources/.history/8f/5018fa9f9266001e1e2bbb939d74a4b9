@@ -1,0 +1,12 @@
+package testpractice;
+
+public class Sample {
+	static int b =30;
+	static void test() {
+		System.out.println("test");
+	}
+public static void main(String[] args) {
+	int a =20;
+	test();
+}
+}

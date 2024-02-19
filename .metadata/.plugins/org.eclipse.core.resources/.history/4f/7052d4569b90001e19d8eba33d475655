@@ -1,0 +1,18 @@
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Sample {
+
+	public static void main(String[] args) {
+		
+		String key="webdriver.chrome.driver";
+		String value="C:\\Users\\MABIRADA\\Myworkspace\\TestAutomationInterview\\drivers\\chromedriver.exe";
+		System.setProperty(key, value);
+		ChromeDriver driver=new ChromeDriver();
+		driver.get("file:///C:/Users/MABIRADA/OneDrive%20-%20Capgemini/Desktop/Traversing.html");
+		WebElement element=driver.findElement(By.tagName("//select/parent::body"));
+	String value2=element.getText();
+	System.out.println(value2);
+	}
+}

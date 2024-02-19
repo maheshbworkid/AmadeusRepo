@@ -1,0 +1,20 @@
+package com.qa.testRunner;
+
+import org.junit.runner.RunWith;
+
+import io.cucumber.junit.Cucumber;
+import io.cucumber.junit.CucumberOptions;
+
+
+@RunWith(Cucumber.class)
+@CucumberOptions(
+		features= {"src/test/resources/com/qa/features/Login.feature"},
+		glue={"com/qa/stepDefinations", "com/qa/apphooks"},
+		plugin= {"pretty"}
+		
+		)
+
+public class TestRunner {
+
+	
+}

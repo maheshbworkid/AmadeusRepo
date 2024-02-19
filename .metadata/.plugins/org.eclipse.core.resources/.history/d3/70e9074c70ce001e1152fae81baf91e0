@@ -1,0 +1,22 @@
+package Concepts;
+class Sample{
+	
+}
+public class SingleTonDesignPattern {
+	private SingleTonDesignPattern() {
+		
+	}
+	
+	private static SingleTonDesignPattern instance;
+	static SingleTonDesignPattern getInstance() {
+	if(instance==null) {
+		new SingleTonDesignPattern();
+	}
+	else {
+		return instance;
+	}
+	}
+public static void main(String[] args) {
+	
+}
+}

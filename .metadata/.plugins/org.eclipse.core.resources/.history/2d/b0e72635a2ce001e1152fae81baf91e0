@@ -1,0 +1,15 @@
+package Collections;
+
+import java.util.HashMap;
+
+public class MapExample {
+public static void main(String[] args) {
+	HashMap h1=new HashMap();
+	h1.put(1, "rahul");
+	h1.put(2, "arun");
+	h1.put(3,  "Rohit");
+	h1.put(4,  "sharan");
+	h1.put(5,  "test");
+	h1.put(5, ""Kishan);
+}
+}

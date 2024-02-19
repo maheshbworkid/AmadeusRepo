@@ -1,0 +1,22 @@
+package collectionsPractice;
+
+import java.util.TreeSet;
+
+public class SortedSetExample {
+public static void main(String[] args) {
+	TreeSet t1=new TreeSet();
+	t1.add(10);
+	t1.add(90);
+	t1.add(50);
+	t1.add(5);
+	t1.add(19);
+	t1.add(99);
+	System.out.println(t1);
+	System.out.println(t1.first());
+	System.out.println(t1.last());
+//	System.out.println(t1.subSet(1, 3));
+	System.out.println(t1.tailSet(19));
+	System.out.println(t1.headSet(50));
+//	System.out.println(t1.comparator());
+}
+}

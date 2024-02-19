@@ -1,0 +1,39 @@
+package collectionsPractice;
+
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.LinkedHashSet;
+
+public class HashSet1 {
+
+	public static void main(String[] args) {
+	ArrayList l1=new ArrayList();
+	l1.add(10);
+	l1.add(30);
+	l1.add(40);
+	l1.add(59);
+	l1.add(99);
+	l1.add(99);
+	
+	System.out.println(l1);
+	
+	LinkedHashSet h1=new LinkedHashSet();
+	for( Object element:l1) {
+		if((Integer)element%2==0) {
+			h1.add(element);
+			
+		}
+		
+		
+	}
+	System.out.println(h1);		
+//	LinkedHashSet lt1=new LinkedHashSet();
+//	for(Object elements:h1) {
+//		
+//		lt1.add(elements);
+//		
+//	}
+//	System.out.println(lt1.toString());
+}
+	
+}

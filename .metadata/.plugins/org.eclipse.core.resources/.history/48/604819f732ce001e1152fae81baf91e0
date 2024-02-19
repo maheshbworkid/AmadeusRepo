@@ -1,0 +1,10 @@
+package Concepts;
+
+public class ToStringMethod {
+	
+	
+public static void main(String[] args) {
+	ToStringMethod t1=new ToStringMethod("ram", 101);
+	ToStringMethod t2=new ToStringMethod("lakshman", 102);
+}
+}

@@ -1,0 +1,17 @@
+package Concepts;
+
+class Temp{
+void disp() {
+	System.out.println("1mp");	
+	}
+}
+public class MethodOverriding extends Temp{
+void disp() {
+	System.out.println("3mp");	
+	}
+public static void main(String[] args) {
+	MethodOverriding m1=new MethodOverriding();
+	m1.disp();
+	
+}
+}

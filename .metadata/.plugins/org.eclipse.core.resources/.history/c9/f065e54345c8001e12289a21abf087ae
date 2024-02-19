@@ -1,0 +1,18 @@
+package collectionsPractice;
+
+import java.util.TreeSet;
+
+
+public class Treeset1 {
+public static void main(String[] args) {
+	TreeSet t1=new TreeSet();
+	t1.add(new StringBuffer("A"));
+	t1.add(new StringBuffer("Z"));
+	t1.add(new StringBuffer("B"));
+	t1.add(new StringBuffer("L"));
+//	t1.add(5);
+	System.out.println(t1);
+	
+	
+}
+}

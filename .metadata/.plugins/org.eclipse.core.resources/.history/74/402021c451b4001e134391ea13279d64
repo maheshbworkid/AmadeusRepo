@@ -1,0 +1,25 @@
+package functions;
+
+
+
+class C{
+	int a=50;
+	void inn(PassbyreferenceExample p3) {
+		System.out.println(p3.c);
+	}
+}
+public class PassbyreferenceExample {
+	int c=40;
+	static void disp(PassbyreferenceExample p2) {
+		
+		System.out.println(p2.c);
+	}
+public static void main(String[] args) {
+	PassbyreferenceExample p1=new PassbyreferenceExample();
+	disp(p1);
+	
+	C c1=new C();
+	System.out.println(c1.a);
+	c1.inn(p1);
+}
+}

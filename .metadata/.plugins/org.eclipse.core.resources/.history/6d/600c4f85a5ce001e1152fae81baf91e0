@@ -1,0 +1,13 @@
+package Collections;
+
+import java.util.TreeMap;
+
+public class TreeMapSorting {
+public static void main(String[] args) {
+	TreeMap t1=new TreeMap();
+	t1.put("rahul", 100);
+	t1.put("rohan", 200);
+	t1.put("rohit", 188);
+	t1.put("shyam", 121);
+}
+}

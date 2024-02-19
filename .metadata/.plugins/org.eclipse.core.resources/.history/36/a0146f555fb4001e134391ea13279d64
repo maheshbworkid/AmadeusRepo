@@ -1,0 +1,41 @@
+package functions;
+
+public class RuntimePolymorphism {
+
+	void noise() {
+		System.out.println("Animal noise");
+	}
+	
+	
+}
+
+class Dog extends RuntimePolymorphism{
+	void noise() {
+		System.out.println("bowbow");
+	}
+}
+
+class Cat extends RuntimePolymorphism{
+	void noise() {
+		System.out.println("mewomeow");
+	}
+}
+
+class Lion extends RuntimePolymorphism{
+	void noise() {
+		System.out.println("Gurrrr");
+	}
+}
+
+class MainExample{
+public static void main(String[] args) {
+	RuntimePolymorphism r1=new Dog();
+	RuntimePolymorphism r2=new Cat();
+	RuntimePolymorphism r3=new Lion();
+	r1.noise();
+	r2.noise();
+	r3.noise();
+	
+	
+}	
+}

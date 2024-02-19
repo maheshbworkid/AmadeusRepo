@@ -1,0 +1,15 @@
+package Collections;
+
+import java.util.Vector;
+
+public class EnumerationExample {
+public static void main(String[] args) {
+	Vector v1=new Vector();
+	v1.addElement(20);
+	v1.addElement("test");
+	v1.addElement(20);
+	v1.addElement(null);
+	System.out.println(v1);
+	
+}
+}

@@ -1,0 +1,18 @@
+package collectionsPractice;
+
+import java.util.TreeMap;
+
+public class SortedMap1 {
+
+	public static void main(String[] args) {
+	TreeMap t1=new TreeMap();
+	t1.put(10, "Ram");
+	t1.put(20, "Mahesh");
+	t1.put(30, "Sharan");
+	t1.put(null, "test");
+	t1.put(null, "post");
+	t1.put(30, "Sharanappa");
+	t1.put(99, "Dev");
+	
+	}
+}

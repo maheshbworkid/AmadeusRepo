@@ -1,0 +1,13 @@
+package Concepts;
+
+public class ToStringMethod {
+	String name;
+	int num;
+	ToStringMethod(String name, int num){
+		this.name=name;
+	}
+public static void main(String[] args) {
+	ToStringMethod t1=new ToStringMethod("ram", 101);
+	ToStringMethod t2=new ToStringMethod("lakshman", 102);
+}
+}

@@ -1,0 +1,11 @@
+package ExceptionHandling;
+
+import java.io.PrintWriter;
+
+public class ThrowsKeyword {
+public static void main(String[] args) {
+	PrintWriter pt=new PrintWriter("abc.txt");
+	pt.print("test");
+	
+}
+}

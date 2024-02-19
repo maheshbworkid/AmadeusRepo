@@ -1,0 +1,45 @@
+package com.qa.pages;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
+
+public class LoginPage {
+	
+	private WebDriver driver;
+	private By emailId=By.id("ap_email");
+	private By paswword=By.id("ap_password");
+	private By continueButton=By.id("continue");
+	private By signInButton=By.xpath("//div[@id='nav-al-signin']//span[text()='Sign in']");
+	private By signInContinue=By.id("signInSubmit");
+	public By SignIndropDown=By.id("nav_ya_signin");
+	
+	public LoginPage(WebDriver driver){
+		this.driver=driver;
+		
+	}
+	
+	//page actions
+	public String getPageTitle() {
+		return driver.getTitle();
+	}
+	
+	public void continueSignIn() {
+		Actions action=new Actions(driver);
+		action.moveToElement(SignIndropDown).perform();
+		driver.findElement(signInContinue);
+	}
+	
+	public void enterCredentials(String username, String password) {
+		driver.findElement(emailId).sendKeys(username);
+		driver.findElement(continueButton).click();
+		driver.findElement(paswword).sendKeys(password);
+	}
+
+	public void clickonSignIn() {
+		driver.findElement(signInButton).click();
+	}
+	
+	
+}

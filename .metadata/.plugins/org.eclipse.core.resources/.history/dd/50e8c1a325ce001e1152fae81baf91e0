@@ -1,0 +1,11 @@
+package Concepts;
+class Sample21{
+	
+}
+public  class FinalKeywordExample extends Sample21{
+	static final double a=3.14;
+	final
+public static void main(String[] args) {
+new	FinalKeywordExample();
+}
+}

@@ -1,0 +1,20 @@
+package functions;
+ class Gt{
+	int a=30;
+	 void test() {
+		System.out.println("overriding");
+	}
+}
+public  class FinalKeyword extends Gt {
+void test() {
+	System.out.println("Overriden");
+}
+	public static void main(String[] args) {
+		Gt g1=new Gt();
+		System.out.println(g1.a);
+		FinalKeyword f1=new FinalKeyword();
+		f1.test();
+		
+		
+	}
+}

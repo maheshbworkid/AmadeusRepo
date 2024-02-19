@@ -1,0 +1,20 @@
+package functions;
+
+
+abstract class XYZ implements Example{
+	public void disp() {
+		System.out.println("Running disp");
+	}
+}
+public class InterfaceExample implements Example{
+ public void test() {
+	System.out.println("Running test");
+}
+ public void post() {
+	 System.out.println("Running post");
+ }
+	public static void main(String[] args) {
+		
+	}
+	
+}

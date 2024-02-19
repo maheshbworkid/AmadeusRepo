@@ -1,0 +1,14 @@
+package Concepts;
+abstract class Text{
+	abstract void test();
+	abstract void disp();
+	void plus() {
+		System.out.println("Running plus");
+	}
+}
+public class AbstractClassExample extends Text{
+	
+public static void main(String[] args) {
+	
+}
+}

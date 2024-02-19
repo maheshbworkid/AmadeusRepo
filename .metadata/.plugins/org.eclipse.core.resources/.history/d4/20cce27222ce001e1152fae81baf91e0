@@ -1,0 +1,20 @@
+package Concepts;
+class Testing{
+	Testing(){
+		System.out.println("Running testing");
+	}
+}
+class Calling extends Testing{
+	Calling(){
+		System.out.println("Running calling");
+	}
+}
+public class SuperCalling  extends Calling{
+	SuperCalling(){
+		System.out.println("Running supercalling");
+	}
+public static void main(String[] args) {
+	SuperCalling s1=new SuperCalling();
+	
+}
+}

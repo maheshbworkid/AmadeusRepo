@@ -1,0 +1,60 @@
+package com.qa.stepDefinations;
+
+
+
+import org.junit.Assert;
+
+import com.qa.driverFactory.DriverFactory;
+import com.qa.pages.LoginPage;
+
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
+
+public class LoginSteps {
+	
+	private static String title;
+private LoginPage loginpage=new LoginPage(DriverFactory.getDriver());
+
+
+
+@Given("user is on welcome page")
+public void user_is_on_welcome_page() {
+	DriverFactory.getDriver().get("https://www.amazon.in");
+}
+
+@When("user gets the title of the page")
+public void user_gets_the_title_of_the_page() {
+	 title=loginpage.getPageTitle();
+	System.out.println("The login page title is" +  title);
+}
+
+@Then("the page title should be {string}")
+public void the_page_title_should_be(String expectedTitleName) {
+	
+	//Assert.assertTrue(title.contains(expectedTitleName))
+	Assert.assertTrue(title.contains(expectedTitleName) );
+}
+
+
+@Then("user click on Sign in dropdown button")
+public void user_click_on_sign_in_dropdown_button() {
+	
+   
+}
+
+@Then("user is on login page")
+public void user_is_on_login_page() {
+  
+}
+
+@Then("User enters valid username and password")
+public void user_enters_valid_username_and_password(io.cucumber.datatable.DataTable dataTable) {
+   
+}
+
+@Then("user verifies the signed in user name")
+public void user_verifies_the_signed_in_user_name() {
+   
+}
+}

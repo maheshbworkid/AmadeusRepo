@@ -1,0 +1,12 @@
+package Concepts;
+
+public class ConstructorTypes {
+	ConstructorTypes(){
+	System.out.println("Running non paramatrized constructor ");	
+	}
+public static void main(String[] args) {
+	ConstructorTypes c1=new ConstructorTypes();
+	
+	
+}
+}

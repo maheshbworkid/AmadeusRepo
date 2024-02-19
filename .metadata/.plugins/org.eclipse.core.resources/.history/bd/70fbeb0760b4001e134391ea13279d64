@@ -1,0 +1,12 @@
+package functions;
+final class Gt{
+	int a=30;
+}
+public  class FinalKeyword {
+
+	public static void main(String[] args) {
+		Gt g1=new Gt();
+		System.out.println(g1.a);
+		
+	}
+}

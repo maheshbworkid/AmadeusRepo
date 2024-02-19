@@ -1,0 +1,20 @@
+package ExceptionHandling;
+
+public class Sample {
+	
+	void stuff() {
+		doStuff();
+		System.out.println("Running stuff");
+	}
+	void doStuff() {
+		doMoreStuff();
+		System.out.println("Running doStuff");
+	}
+	void doMoreStuff() {
+		System.out.println("Running domorestuff");
+	}
+public static void main(String[] args) {
+	Sample s1=new Sample();
+	s1.stuff();
+}
+}

@@ -1,0 +1,17 @@
+package functions;
+
+class P{
+	int a=50;
+	void disp(){
+	System.out.println("Running sub calss methods");	
+	}
+}
+public class InheritanceExample  extends P{
+int c=90;
+void post() {
+	System.out.println("Running superclass method");
+}
+	public static void main(String[] args) {
+		
+	}
+}

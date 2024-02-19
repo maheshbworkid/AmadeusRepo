@@ -1,0 +1,19 @@
+package collectionsPractice;
+
+import java.util.HashMap;
+import java.util.Set;
+
+public class Maps1 {
+
+	public static void main(String[] args) {
+		HashMap h1=new HashMap();
+		h1.put("ABC", 20);
+		h1.put("QWERTY", 30);
+		h1.put("POIUYT", 50);
+		h1.put("MAN", 20);
+		h1.put("QWERTY", 90);
+		System.out.println(h1);
+		Set s1=h1.keySet();
+		System.out.println(s1);
+	}
+}

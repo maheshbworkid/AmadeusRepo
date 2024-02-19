@@ -1,0 +1,18 @@
+package Concepts;
+interface Testing11{
+	void disp();
+	static void test() {
+		
+	}
+}
+public class InterfaceExample implements Test {
+	public void disp() {
+		System.out.println("Running disp");
+	}
+	static void test() {
+		System.out.println("Running test");
+	}
+public static void main(String[] args) {
+	
+}
+}

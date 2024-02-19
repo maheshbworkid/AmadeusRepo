@@ -1,0 +1,22 @@
+package Concepts;
+class SampleTest{
+	SingleTonDesignPattern obj1=SingleTonDesignPattern.getInstance();
+	SingleTonDesignPattern obj2=SingleTonDesignPattern.getInstance();
+}
+public class SingleTonDesignPattern {
+	private SingleTonDesignPattern() {
+		
+	}
+	
+	private static SingleTonDesignPattern instance;
+	static SingleTonDesignPattern getInstance() {
+	if(instance==null) {
+		instance=new SingleTonDesignPattern();
+	}
+	
+	return instance;
+	}
+public static void main(String[] args) {
+	
+}
+}

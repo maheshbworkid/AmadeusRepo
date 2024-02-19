@@ -1,0 +1,26 @@
+package functions;
+
+class DC{
+	DC(){
+		System.out.println("Running super superclass constructor");
+	}
+}
+class AB extends DC{
+	 AB(){
+		System.out.println("Running Supeerclass constructor"); 
+	 }
+	
+}
+
+public class SuperCallingStatement extends AB {
+	
+	SuperCallingStatement(){
+		System.out.println("Running subclass constructor");
+	}
+public static void main(String[] args) {
+	SuperCallingStatement s1=new SuperCallingStatement();
+	
+	
+}
+}
+

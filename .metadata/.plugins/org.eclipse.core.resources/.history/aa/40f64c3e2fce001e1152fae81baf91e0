@@ -1,0 +1,18 @@
+package Concepts;
+
+import java.lang.reflect.Method;
+
+public class ObjectClass1 {
+
+public static void main(String[] args) throws Exception {
+	static	int count=0;
+	Class c1=Class.forName("java.lang.object");
+			Method[] m1=c1.getDeclaredMethods();
+			for(Method fun:m1) {
+				count++;
+				System.out.println(fun.getName());
+			}
+			System.out.println(count);
+	
+}
+}

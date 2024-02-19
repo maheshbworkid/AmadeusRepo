@@ -1,0 +1,22 @@
+package functions;
+
+
+
+class C{
+
+	}
+
+public class PassbyreferenceExample {
+	int c=40;
+
+	void disp() {
+		System.out.println("Running disp");
+	}
+	
+	static void post() {
+		System.out.println("running post");
+	}
+public static void main(String[] args) {
+	
+}
+}

@@ -1,0 +1,49 @@
+package collectionsPractice;
+
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.IdentityHashMap;
+import java.util.Iterator;
+import java.util.LinkedHashMap;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Set;
+
+public class Maps1 {
+
+	public static void main(String[] args) {
+	//	HashMap<String, Object> h1=new HashMap<String, Object>();
+		LinkedHashMap<String, Object> h1=new LinkedHashMap<String, Object>();
+		h1.put("ABC", 20);
+		h1.put("QWERTY", 30);
+		h1.put("POIUYT", 50);
+		h1.put("MAN", 20);
+		h1.put("QWERTY", 90);
+		System.out.println(h1);
+		Set s1=h1.keySet();
+		System.out.println(s1);
+		Collection c1=h1.values();
+		System.out.println(c1);
+		System.out.println(h1.get("ABC"));
+	
+//		Iterator itr=c1.iterator();
+//		while(itr.hasNext()) {
+//			//HashMap<String, Object> mpair = new HashMap<String, Object>();
+//			
+//			Map.Entry<String, Object> m1=(Entry<String, Object>) itr.next();
+//			if(m1.getKey().equals(("MAN"))){
+//				m1.setValue(1000);
+//			}
+//			System.out.println(h1);
+//		}
+//		
+		
+		IdentityHashMap h2=new IdentityHashMap();
+		Integer i1=new Integer(10);
+		Integer i2=new Integer(10);
+		h2.put(i1, "pawan");
+		h2.put(i2, "kalyan");
+		System.out.println(h2);
+		
+	}
+}

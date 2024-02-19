@@ -1,0 +1,21 @@
+package Concepts;
+
+public class HashCodeExample {
+	String name;
+	int rollno;
+	HashCodeExample(String name, int rollno){
+		this.name=name;
+		this.rollno=rollno;
+	}
+	public String toString() {
+		return rollno + " ";
+	}
+	public int hashcode() {
+		return rollno;
+	}
+public static void main(String[] args) {
+	HashCodeExample h1=new HashCodeExample("rahul", 10);
+	HashCodeExample h2=new HashCodeExample("rohit", 100);
+	System.out.println(h1);
+}
+}

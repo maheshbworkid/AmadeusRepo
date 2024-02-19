@@ -1,0 +1,9 @@
+package functions;
+
+public class TypeCasting {
+
+	public static void main(String[] args) {
+		double c=20;
+		System.out.println(c);
+	}
+}

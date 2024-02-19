@@ -1,0 +1,11 @@
+package Concepts;
+
+public class StaticExamples {
+static	disp(){
+		System.out.println("Running disp");
+	}
+public static void main(String[] args) {
+	int a=10;
+	
+}
+}

@@ -1,0 +1,768 @@
+Delivered-To: maheshbworkid@gmail.com
+Received: by 2002:ac8:74d:0:b0:427:58da:cdb7 with SMTP id k13csp1141143qth;
+        Thu, 21 Dec 2023 10:02:34 -0800 (PST)
+X-Received: by 2002:a81:48d4:0:b0:5e7:7b90:e4e3 with SMTP id v203-20020a8148d4000000b005e77b90e4e3mr181029ywa.45.1703181753783;
+        Thu, 21 Dec 2023 10:02:33 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1703181753; cv=none;
+        d=google.com; s=arc-20160816;
+        b=ggEmBrpz/7oRwMEdWIHbGFloqHI2dRnfeE8casIskMiC9d8L7LHUF1B15tpnsEksjp
+         Nd3Q3NQUG+5d/n2KT1fogRspYF0e4oTyXig9DciYckSdKjuLbnalXLIEr7Zq1SZFB3CJ
+         vH0EUzKLmAvaPqWb02vRvbQw6UCYu9pkE9+iNgs5x/xo4xT8OfMFZAJAjXopBevTUH/B
+         O82edP+bWLD2OZrI9aIPCmMP1d4xO6i6X3NhuILxbPr6vnWCQItbnlWZrxteU3h7JjNx
+         4pKiX5q6F1f/LQDBcXK9gq+UbluGn8SGltdKEqCwGMx2SBoGhXRhQD0/WAni6G9880xa
+         C1gw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=to:subject:message-id:date:from:in-reply-to:references:mime-version
+         :dkim-signature;
+        bh=O+GFcopHyGkxnrEWovTEaAv21njMCYANFPcXIeuFkVw=;
+        fh=Kk7CPWVeu6PCSOCdjmuM4EKF6xdZbORDG7zVrWHFQ5s=;
+        b=NkCl5ZkX+Ft5wcUVjZ/o53AboWM3Hz8Rdu4RFGULPcKhr1LFGQhAVtmNzMkZ7UsuhL
+         g8jIMdlLXEl6yj47DwdP6faSI0gciQE8DQBJfqqbWfRVqQya/GVFMMKyn4eTXv5a3WcF
+         RAEpxBSgpG59bTS629ARUBqlWmPzH65Uz5IMyHoaPXpvIEDmruR6Zc1jRpr5ioF+STLA
+         kd052q/S/2haBTWMlcRthx3GEZeLRBL1+JznZF0PBM3GSU7zHaT2Mt0uno0MOGZyVtBR
+         XN+OCrJDjbTGhAKG6d3MgfH0rW+MtFqxp1tysKoz/smhO6w/NidyxE1WRB2IZ+KDbOnS
+         w3mw==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@gmail.com header.s=20230601 header.b=N97TMsnL;
+       spf=pass (google.com: domain of maheshbiradarwe@gmail.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=maheshbiradarwe@gmail.com;
+       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com
+Return-Path: <maheshbiradarwe@gmail.com>
+Received: from mail-sor-f41.google.com (mail-sor-f41.google.com. [209.85.220.41])
+        by mx.google.com with SMTPS id d72-20020a814f4b000000b005a507a849aesor1370977ywb.1.2023.12.21.10.02.33
+        for <maheshbworkid@gmail.com>
+        (Google Transport Security);
+        Thu, 21 Dec 2023 10:02:33 -0800 (PST)
+Received-SPF: pass (google.com: domain of maheshbiradarwe@gmail.com designates 209.85.220.41 as permitted sender) client-ip=209.85.220.41;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@gmail.com header.s=20230601 header.b=N97TMsnL;
+       spf=pass (google.com: domain of maheshbiradarwe@gmail.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=maheshbiradarwe@gmail.com;
+       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20230601; t=1703181753; x=1703786553; dara=google.com;
+        h=to:subject:message-id:date:from:in-reply-to:references:mime-version
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=O+GFcopHyGkxnrEWovTEaAv21njMCYANFPcXIeuFkVw=;
+        b=N97TMsnLJhY4DpDybAkb7wKZ9Fn6m5KOIxgyAqnuiZyigSdhayDFK0JEto6/dX9g6F
+         BDqMEBP9OBKGDPuLaucAde+sgtnCyWQBtopupxlO5WQZlvNJfjjnU2j3vMqDI6OWyn7r
+         EqxYuMTcM50KYKuACFoDIEpKxeRZim78C8qnvdiSe3t/k8YfW8f0QKzBJyiDV0MOLY4c
+         eS6W2Nwyvz7G/wSYd209L/zkIcvfUJmY2YJmoY0PdHgFthyUu38ogovUQQDrDcAoyYMt
+         aaVnqvEslKGb3NNbaFDfvd7AU6MN5jT9RikqgrdBIVXs4SX9xgOmBiIS6hSKrk1H8gIG
+         BWeg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1703181753; x=1703786553;
+        h=to:subject:message-id:date:from:in-reply-to:references:mime-version
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=O+GFcopHyGkxnrEWovTEaAv21njMCYANFPcXIeuFkVw=;
+        b=r1aFD9WIxH0bpcFVoCw28slRw2SIq9kRvfC2TTm6HeCbKtIn8KyvVp6jrxOp6BPl/G
+         P/Qp23NBPx8PXNCE3a78424YNJ6uyIiXPN543MCXkfvPGDPISGloVSKHKtxx8ttSlDEp
+         URpJP3EcqNT33h8ig+RoSE/tgE7jjjeUvZ4meicxubSIJXvj9vSpqmeIjKZviATxGMSS
+         ZYRGMNnztHrxZYuc2FxKkKMH8Ab6wlA333ZrLSX/ZagB8SqdUPAiEsNTCI30XU/O4fS+
+         DKlzB2S+AvzkVVcEE86tfxYmoy5Y6g/lwYfZlyw6ZyhBvWEzIOO3+H24YDJjt2PxjOiQ
+         BVWA==
+X-Gm-Message-State: AOJu0YzXRBjO7dFftkSVbSo5MRLiYBXwOKIkXyDXvz6HbqYfMHtdqm1I
+	mNEkrvB/Qf/WIiIt1nPf8zthfuQuakyVjcYrh6hJ2UuRuH4=
+X-Google-Smtp-Source: AGHT+IGRB2A9U9y7DJU6STBltXDEWn2gJDfO4aELh0j/jGkjT/0wNA9PeaGgRPwgc1sS8DpwlYmQ87Iy5q7kJ65OpNU=
+X-Received: by 2002:a25:8e06:0:b0:dbd:b599:19a1 with SMTP id
+ p6-20020a258e06000000b00dbdb59919a1mr118257ybl.73.1703181752964; Thu, 21 Dec
+ 2023 10:02:32 -0800 (PST)
+MIME-Version: 1.0
+References: <884866419.1176839.1635261014500.JavaMail.sfuser@vsa8358186.successfactors.com>
+In-Reply-To: <884866419.1176839.1635261014500.JavaMail.sfuser@vsa8358186.successfactors.com>
+From: Mahesh Biradar <maheshbiradarwe@gmail.com>
+Date: Thu, 21 Dec 2023 23:32:21 +0530
+Message-ID: <CAL=2tS+_jh=N4b7p=MNO3O+0O9iT3dnqaEPEV=cGWt4XB5G0Ew@mail.gmail.com>
+Subject: Fwd: IN Offer Letter
+To: Mahi S <maheshbworkid@gmail.com>
+Content-Type: multipart/alternative; boundary="0000000000005f9baa060d08e7f1"
+
+--0000000000005f9baa060d08e7f1
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+---------- Forwarded message ---------
+From: Capgemini <auto.noreply@capgemini.com>
+Date: Tue, Oct 26, 2021 at 8:40=E2=80=AFPM
+Subject: IN Offer Letter
+To: Mahesh Biradar <Maheshbiradarwe@gmail.com>
+CC: Preeti <preeti.b.mishra@capgemini.com>, Pradip <
+pradip.a.kumar@capgemini.com>, Apoorva <apoorva.gupta@capgemini.com>
+
+
+*Most Ethical Company - Eight times in a row
+<https://www.capgemini.com/in-en/news/capgemini-recognized-by-the-ethispher=
+e-institute-2/>*
+
+*We=E2=80=99re highly- rated on Glassdoor
+<https://www.glassdoor.co.in/Reviews/Capgemini-Reviews-E3803.htm>*
+
+*Capgemini Research Institute ranked #1
+<https://www.capgemini.com/in-en/news/cri-ranked-no-1-for-fourth-consecutiv=
+e-time-by-source-global-research/>*
+
+*Our gender balance initiatives
+<https://www.capgemini.com/in-en/careers/diversity-and-inclusion/advancing-=
+gender-diversity-at-capgemini/>*
+
+*Our global client stories
+<https://www.capgemini.com/in-en/all-client-stories/>*
+
+
+
+Dear Mahesh,
+
+We are pleased to extend to you an offer for the position of  Consultant at
+Capgemini.
+
+Not only did you crack your interview with us, you aced it! A trait we
+keenly look out for because, at Capgemini, we believe that passionate
+people are our Ace of Spades
+<http://panela.capgemini.com/ltrack?g=3D0&id=3DK0tUAQZUAAVRVk9UBgkDBlYGDUQ=
+=3DBgIABFEACUtDQwYOClkAQ1dKRHMCBEMDU1RaWAwdVldZ&client=3D8255&test=3D1&c=3D=
+0000>,
+people who ace at their field of expertise and give meaning to their
+passion.
+
+With us, you will gain the freedom to chart your career path. Whether you
+are seeking your very first job or your next career opportunity, joining us
+will enable you to achieve the professional growth and work-life balance
+<https://www.capgemini.com/in-en/2019/04/making-flexibility-an-enabler-for-=
+personal-and-professional-success/>
+you
+seek.
+
+*Factoring in Your Happiness, Every Step of the Way*
+As widely-quoted as it may be, happy people make a happy workplace. For us,
+the happiness of our people is what truly matters and keeps us going.
+Our Glassdoor
+rating
+<http://panela.capgemini.com/ltrack?g=3D0&id=3DK0tUAQZUAAVRUk9UBgkDBlYGDUQ=
+=3DBgIABFEACUtDQwYOClkAQ1dKRHMCBEMDU1RaWAwdVldZ&client=3D8255&test=3D1&c=3D=
+0000>
+reflects
+this happiness quotient in the positive experiences and feedback shared by
+our past and present employees.
+
+*Let=E2=80=99s Build a Positive Future Together*
+For us, being the Architects of Positive Futures
+<https://www.capgemini.com/in-en/our-company/our-corporate-social-responsib=
+ility-program/all-architects-of-positive-futures/>
+is
+a group-wide aim and driving force behind everything we do. To achieve this
+aim, we leverage three fundamental pillars: Diversity and Inclusion,
+Digital Inclusion, and Environmental Sustainability.
+
+Our Diversity
+<https://www.capgemini.com/in-en/our-company/our-corporate-social-responsib=
+ility-program/diversity/>
+target
+is to increase our global women workforce to *34%* by the end of 2020. In
+India, we are at *35%* as of August 2020; however, this data does not
+include our employees from Altran =E2=80=93 a world-leading provider of Eng=
+ineering
+and R&D services we acquired in April 2020.
+
+Under Digital Inclusion
+<https://www.capgemini.com/in-en/our-company/our-corporate-social-responsib=
+ility-program/digital-inclusion/>,
+we aim to support *100,000 people* via our digital literacy programs. As
+for our Environmental Sustainability
+<https://www.capgemini.com/in-en/our-company/our-corporate-social-responsib=
+ility-program/environmental-sustainability/>
+target,
+we have trained our sights on becoming net-zero by 2030
+<https://www.capgemini.com/in-en/news/capgemini-announces-its-ambition-to-b=
+ecome-a-net-zero-business-by-2030/>,
+and recently undertaken Mission Million <https://ceeds.capgemini.com/>-an
+ambitious program to plant a million trees across India.
+
+Check out the following resources to learn more about Capgemini and why
+this is the place to ace your career.
+
+<https://www.youtube.com/watch?v=3DyfC9NR8kZZ4&feature=3Demb_logo>
+
+*Our India colleagues share what they love about working with Capgemini.
+<https://www.youtube.com/watch?v=3DyfC9NR8kZZ4&feature=3Demb_logo>*
+
+<https://www.youtube.com/watch?v=3DuW1NFJOq7Mk>
+
+*Learn more about Capgemini=E2=80=99s rich history.
+<https://www.youtube.com/watch?v=3DuW1NFJOq7Mk>*
+
+<https://www.youtube.com/watch?v=3D69OJ8L9uFms>
+
+*Aiman Ezzat, Group CEO, discusses our H1 2020 results
+<https://www.youtube.com/watch?v=3D69OJ8L9uFms>.*
+
+<https://www.youtube.com/watch?v=3DSc42UJw_TVw&feature=3Dyoutu.be>
+
+*Discover Next =E2=80=93 Our digital learning platform.
+<https://www.youtube.com/watch?v=3DSc42UJw_TVw&feature=3Dyoutu.be>*
+
+<https://www.youtube.com/watch?v=3DNO9TExCvb_c&feature=3Demb_logo>
+
+*Our global initiative - Tech4Positive Futures Challenge 2020.
+<https://www.youtube.com/watch?v=3DNO9TExCvb_c&feature=3Demb_logo>*
+
+<http://api.momindum.com/watch/uD3ia9PaDsqdqC8aXdJqEgJruhNOLoP7Knk4Z9QLcxE.=
+>
+
+*Know more about our group-wide initiatives to fight against COVID-19
+<https://api.momindum.com/watch/uD3ia9PaDsqdqC8aXdJqEgJruhNOLoP7Knk4Z9QLcxE=
+.>*
+
+
+
+*Love Your Career, Ace Your Career at Capgemini*
+Kindly review your offer and onboarding documentation on our portal, and
+inform us directly on the portal of your decision within the next seven
+calendar days.
+
+To accept your Capgemini offer, please follow the steps below:
+
+   - Review your offer and contract of employment on our portal by
+   accessing the link below
+   - To accept your offer, you can follow the steps in the portal
+   - Once you enter the portal, select *Options > My Offers > Accept *your
+   Capgemini employment offer
+
+
+
+
+
+*Please login to the Careers Site to view your offer.
+<https://career5.successfactors.eu/career?company=3DC0001123183P&clientId=
+=3Djobs2web&lang=3Den_US&navBarLevel=3DMY_PROFILE>*
+
+*Username:* Maheshbiradarwe@gmail.com
+
+*Password:* Click here
+<https://career5.successfactors.eu/career?career_company=3DC0001123183P&log=
+inFlowRequired=3Dtrue&login_ns=3Dforgot_pwd>
+to
+reset your password. (Please use this option to recover your account if you
+forget your password.
+
+
+
+*Note:* Your name mentioned in the offer letter will be used to create your
+employee records in Capgemini, and the same will be continued for all
+communication purposes. In case you need a change in the name, please
+contact your recruiter before your date of joining. Please note that post
+joining, no changes can be made. The name provided by you should match with
+the necessary documents such as educational certificates, experience
+letters, relieving letters, PAN card, Passport, etc.
+
+Should you have any questions, please contact Preeti Mishra  OR
+cg_interview_helpdesk.in@capgemini.com
+
+We would appreciate it if you could share feedback about your interview
+process and interaction with our hiring team. Please click here to start
+the survey <http://bit.ly/2UfVQs5> and on =E2=80=98Submit Interview=E2=80=
+=99 to share your
+interview experience with us. *Kindly note that all Glassdoor reviews are
+anonymous.*
+
+A career with us is an opportunity to find purpose in your passion. It is a
+chance to grow and develop into an ace at what you do.
+
+We look forward to welcoming you as an invaluable member of our team.
+
+Regards,
+
+*Talent Acquisition Team - India*
+
+*Stay Connected. Stay Updated.*
+
+<https://www.facebook.com/CapgeminiIndia/>
+<https://twitter.com/CapgeminiIndia>
+<https://www.linkedin.com/company/capgemini/>
+<https://www.youtube.com/channel/UCRHMhVXEsPtTQ60dkxg8VXw>
+<https://soundcloud.com/capgemini>
+<https://www.instagram.com/capgeminiindia/>
+<https://www.slideshare.net/capgemini>
+<https://www.glassdoor.co.in/Reviews/Capgemini-India-Reviews-EI_IE3803.0,9_=
+IL.10,15_IN115.htm>
+
+
+   Click here <https://www.capgemini.com/in-en/recruitment-disclaimer/> to
+view the recruitment disclaimer.
+                                                                     To
+view our candidate privacy notification please click here
+<http://panela.capgemini.com/ltrack?g=3D0&id=3DK0tUAQZUAAVQVU9UBgkDBlYGDUQ=
+=3DBgIABFEACUtDQwYOClkAQ1dKRHMCBEMDU1RaWAwdVldZ&client=3D8255&test=3D1&c=3D=
+0000>
+
+--0000000000005f9baa060d08e7f1
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<div><br></div><div><br><div class=3D"gmail_quote"><div dir=3D"ltr" class=
+=3D"gmail_attr">---------- Forwarded message ---------<br>From: <strong cla=
+ss=3D"gmail_sendername" dir=3D"auto">Capgemini</strong> <span dir=3D"auto">=
+&lt;<a href=3D"mailto:auto.noreply@capgemini.com">auto.noreply@capgemini.co=
+m</a>&gt;</span><br>Date: Tue, Oct 26, 2021 at 8:40=E2=80=AFPM<br>Subject: =
+IN Offer Letter<br>To: Mahesh Biradar &lt;<a href=3D"mailto:Maheshbiradarwe=
+@gmail.com">Maheshbiradarwe@gmail.com</a>&gt;<br>CC: Preeti &lt;<a href=3D"=
+mailto:preeti.b.mishra@capgemini.com">preeti.b.mishra@capgemini.com</a>&gt;=
+, Pradip &lt;<a href=3D"mailto:pradip.a.kumar@capgemini.com">pradip.a.kumar=
+@capgemini.com</a>&gt;, Apoorva &lt;<a href=3D"mailto:apoorva.gupta@capgemi=
+ni.com">apoorva.gupta@capgemini.com</a>&gt;<br></div><br><br><table border=
+=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=3D"width:1000.0px">
+	<tbody>
+		<tr>
+			<td><img alt=3D"" src=3D"https://performancemanager5.successfactors.eu/C=
+0001123183P/MicrosoftTeams-image.png" style=3D"height:451.0px;width:1000.0p=
+x"></td>
+		</tr>
+	</tbody>
+</table>
+
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=3D"background=
+-color:#25083a;width:750.0px">
+	<tbody>
+		<tr>
+			<td>
+			<p style=3D"text-align:center"><img alt=3D"" src=3D"https://performancem=
+anager5.successfactors.eu/C0001123183P/Img1.png" style=3D"height:191.0px;wi=
+dth:200.0px"></p>
+
+			<p style=3D"text-align:center"><span style=3D"font-size:12.0px"><u><span=
+ style=3D"font-family:Verdana,Geneva,sans-serif"><b><a href=3D"https://www.=
+capgemini.com/in-en/news/capgemini-recognized-by-the-ethisphere-institute-2=
+/" target=3D"_blank"><span style=3D"color:#ffffff">Most Ethical Company - E=
+ight times in a row</span></a></b></span></u></span></p>
+			</td>
+			<td>
+			<p style=3D"text-align:center"><img alt=3D"" src=3D"https://performancem=
+anager5.successfactors.eu/C0001123183P/Img2.png" style=3D"height:191.0px;wi=
+dth:200.0px"></p>
+
+			<p style=3D"text-align:center"><span style=3D"font-size:12.0px"><u><span=
+ style=3D"font-family:Verdana,Geneva,sans-serif"><b><a href=3D"https://www.=
+glassdoor.co.in/Reviews/Capgemini-Reviews-E3803.htm" target=3D"_blank"><spa=
+n style=3D"color:#ffffff">We=E2=80=99re highly- rated on Glassdoor</span></=
+a></b></span></u></span></p>
+			</td>
+			<td>
+			<p style=3D"text-align:center"><img alt=3D"" src=3D"https://performancem=
+anager5.successfactors.eu/C0001123183P/Img3.png" style=3D"height:191.0px;wi=
+dth:200.0px"></p>
+
+			<p style=3D"text-align:center"><span style=3D"font-size:12.0px"><u><span=
+ style=3D"font-family:Verdana,Geneva,sans-serif"><b><a href=3D"https://www.=
+capgemini.com/in-en/news/cri-ranked-no-1-for-fourth-consecutive-time-by-sou=
+rce-global-research/" target=3D"_blank"><span style=3D"color:#ffffff">Capge=
+mini Research Institute ranked #1</span></a></b></span></u></span></p>
+			</td>
+			<td>
+			<p style=3D"text-align:center"><img alt=3D"" src=3D"https://performancem=
+anager5.successfactors.eu/C0001123183P/Img4.png" style=3D"height:191.0px;wi=
+dth:200.0px"></p>
+
+			<p style=3D"text-align:center"><span style=3D"font-size:12.0px"><u><span=
+ style=3D"font-family:Verdana,Geneva,sans-serif"><b><a href=3D"https://www.=
+capgemini.com/in-en/careers/diversity-and-inclusion/advancing-gender-divers=
+ity-at-capgemini/" target=3D"_blank"><span style=3D"color:#ffffff">Our gend=
+er balance initiatives</span></a></b></span></u></span></p>
+			</td>
+			<td>
+			<p style=3D"text-align:center"><img alt=3D"" src=3D"https://performancem=
+anager5.successfactors.eu/C0001123183P/Img5.png" style=3D"height:191.0px;wi=
+dth:200.0px"></p>
+
+			<p style=3D"text-align:center"><span style=3D"font-size:12.0px"><u><b><s=
+pan style=3D"font-family:Verdana,Geneva,sans-serif"><a href=3D"https://www.=
+capgemini.com/in-en/all-client-stories/" target=3D"_blank"><span style=3D"c=
+olor:#ffffff">Our global client stories</span></a></span></b></u></span></p=
+>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=3D"width:1000=
+.0px">
+	<tbody>
+		<tr>
+			<td><img alt=3D"" src=3D"https://performancemanager5.successfactors.eu/C=
+0001123183P/banner_strip_2.png" style=3D"height:47.0px;width:1000.0px"></td=
+>
+		</tr>
+	</tbody>
+</table>
+
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=3D"width:750.=
+0px">
+	<tbody>
+		<tr>
+			<td>
+			<p style=3D"text-align:justify">=C2=A0</p>
+
+			<p style=3D"text-align:justify"><span style=3D"font-family:Verdana,Genev=
+a,sans-serif;font-size:10.0px">Dear </span><span style=3D"font-size:10.0px"=
+>Mahesh</span><span style=3D"font-family:Verdana,Geneva,sans-serif;font-siz=
+e:10.0px">,</span></p>
+
+			<p style=3D"text-align:justify"><span style=3D"font-size:10.0px"><span s=
+tyle=3D"font-family:Verdana,Geneva,sans-serif">We are pleased to extend to =
+you an offer for the position of=C2=A0=C2=A0Consultant=C2=A0at Capgemini.</=
+span></span></p>
+
+			<p style=3D"text-align:justify"><span style=3D"font-size:10.0px"><span s=
+tyle=3D"font-family:Verdana,Geneva,sans-serif">Not only did you crack your =
+interview with us, you aced it! A trait we keenly look out for because, at =
+Capgemini, we believe that passionate people are our=C2=A0<a href=3D"http:/=
+/panela.capgemini.com/ltrack?g=3D0&amp;id=3DK0tUAQZUAAVRVk9UBgkDBlYGDUQ=3DB=
+gIABFEACUtDQwYOClkAQ1dKRHMCBEMDU1RaWAwdVldZ&amp;client=3D8255&amp;test=3D1&=
+amp;c=3D0000" style=3D"color:#0563c1;text-decoration:underline" target=3D"_=
+blank">Ace of Spades</a>, people who ace at their field of expertise and gi=
+ve meaning to their passion.</span></span></p>
+
+			<p style=3D"text-align:justify"><span style=3D"font-size:10.0px"><span s=
+tyle=3D"font-family:Verdana,Geneva,sans-serif">With us, you will gain the f=
+reedom to chart your career path. Whether you are seeking your very first j=
+ob or your next career opportunity, joining us will enable you to achieve t=
+he professional growth and=C2=A0<a href=3D"https://www.capgemini.com/in-en/=
+2019/04/making-flexibility-an-enabler-for-personal-and-professional-success=
+/" style=3D"color:#0563c1;text-decoration:underline" target=3D"_blank">work=
+-life balance</a>=C2=A0you seek.</span></span></p>
+
+			<p style=3D"text-align:justify"><span style=3D"font-size:10.0px"><span s=
+tyle=3D"font-family:Verdana,Geneva,sans-serif"><b>Factoring in Your Happine=
+ss, Every Step of the Way</b><br>
+			As widely-quoted as it may be, happy people make a happy workplace. For =
+us, the happiness of our people is what truly matters and keeps us going. O=
+ur=C2=A0<a href=3D"http://panela.capgemini.com/ltrack?g=3D0&amp;id=3DK0tUAQ=
+ZUAAVRUk9UBgkDBlYGDUQ=3DBgIABFEACUtDQwYOClkAQ1dKRHMCBEMDU1RaWAwdVldZ&amp;cl=
+ient=3D8255&amp;test=3D1&amp;c=3D0000" style=3D"color:#0563c1;text-decorati=
+on:underline" target=3D"_blank">Glassdoor rating</a>=C2=A0reflects this hap=
+piness quotient in the positive experiences and feedback shared by our past=
+ and present employees.</span></span></p>
+
+			<p style=3D"text-align:justify"><span style=3D"font-size:10.0px"><span s=
+tyle=3D"font-family:Verdana,Geneva,sans-serif"><b>Let=E2=80=99s Build a Pos=
+itive Future Together</b><br>
+			For us, being the=C2=A0<a href=3D"https://www.capgemini.com/in-en/our-co=
+mpany/our-corporate-social-responsibility-program/all-architects-of-positiv=
+e-futures/" style=3D"color:#0563c1;text-decoration:underline" target=3D"_bl=
+ank">Architects of Positive Futures</a>=C2=A0is a group-wide aim and drivin=
+g force behind everything we do. To achieve this aim, we leverage three fun=
+damental pillars: Diversity and Inclusion, Digital Inclusion, and Environme=
+ntal Sustainability.</span></span></p>
+
+			<p style=3D"text-align:justify"><span style=3D"font-size:10.0px"><span s=
+tyle=3D"font-family:Verdana,Geneva,sans-serif">Our=C2=A0<a href=3D"https://=
+www.capgemini.com/in-en/our-company/our-corporate-social-responsibility-pro=
+gram/diversity/" style=3D"color:#0563c1;text-decoration:underline" target=
+=3D"_blank">Diversity</a>=C2=A0target is to increase our global women workf=
+orce to=C2=A0<b>34%</b>=C2=A0by the end of 2020. In India, we are at=C2=A0<=
+b>35%</b>=C2=A0as of August 2020; however, this data does not include our e=
+mployees from Altran =E2=80=93 a world-leading provider of Engineering and =
+R&amp;D services we acquired in April 2020.</span></span></p>
+
+			<p style=3D"text-align:justify"><span style=3D"font-size:10.0px"><span s=
+tyle=3D"font-family:Verdana,Geneva,sans-serif">Under=C2=A0<a href=3D"https:=
+//www.capgemini.com/in-en/our-company/our-corporate-social-responsibility-p=
+rogram/digital-inclusion/" style=3D"color:#0563c1;text-decoration:underline=
+" target=3D"_blank">Digital Inclusion</a>, we aim to support=C2=A0<b>100,00=
+0 people</b>=C2=A0via our digital literacy programs. As for our=C2=A0<a hre=
+f=3D"https://www.capgemini.com/in-en/our-company/our-corporate-social-respo=
+nsibility-program/environmental-sustainability/" style=3D"color:#0563c1;tex=
+t-decoration:underline" target=3D"_blank">Environmental Sustainability</a>=
+=C2=A0target, we have trained our sights on becoming=C2=A0<a href=3D"https:=
+//www.capgemini.com/in-en/news/capgemini-announces-its-ambition-to-become-a=
+-net-zero-business-by-2030/" style=3D"color:#0563c1;text-decoration:underli=
+ne" target=3D"_blank">net-zero by 2030</a>, and recently undertaken=C2=A0<a=
+ href=3D"https://ceeds.capgemini.com/" style=3D"color:#0563c1;text-decorati=
+on:underline" target=3D"_blank">Mission Million</a>-an ambitious program to=
+ plant a million trees across India.</span></span></p>
+
+			<p style=3D"text-align:justify"><span style=3D"font-size:10.0px"><span s=
+tyle=3D"font-family:Verdana,Geneva,sans-serif">Check out the following reso=
+urces to learn more about Capgemini and why this is the place to ace your c=
+areer.</span></span></p>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=3D"width:1000=
+.0px">
+	<tbody>
+		<tr>
+			<td><img alt=3D"" src=3D"https://performancemanager5.successfactors.eu/C=
+0001123183P/banner_strip_3.png" style=3D"height:47.0px;width:1000.0px"></td=
+>
+		</tr>
+	</tbody>
+</table>
+
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=3D"background=
+-color:#12abdb;width:751.0px">
+	<tbody>
+		<tr>
+			<td>
+			<p style=3D"text-align:center"><a href=3D"https://www.youtube.com/watch?=
+v=3DyfC9NR8kZZ4&amp;feature=3Demb_logo" target=3D"_blank"><img alt=3D"" src=
+=3D"https://performancemanager5.successfactors.eu/C0001123183P/Img6.png" st=
+yle=3D"height:276.0px;width:333.0px"></a></p>
+
+			<p style=3D"text-align:center"><span style=3D"font-size:12.0px"><u><b><s=
+pan style=3D"font-family:Verdana,Geneva,sans-serif"><a href=3D"https://www.=
+youtube.com/watch?v=3DyfC9NR8kZZ4&amp;feature=3Demb_logo" target=3D"_blank"=
+><span style=3D"color:#ffffff">Our India colleagues share what they love ab=
+out working with Capgemini.</span></a></span></b></u></span></p>
+			</td>
+			<td>
+			<p style=3D"text-align:center"><a href=3D"https://www.youtube.com/watch?=
+v=3DuW1NFJOq7Mk" target=3D"_blank"><img alt=3D"" src=3D"https://performance=
+manager5.successfactors.eu/C0001123183P/Img7.png" style=3D"height:276.0px;w=
+idth:334.0px"></a></p>
+
+			<p style=3D"text-align:center"><span style=3D"font-size:12.0px"><u><span=
+ style=3D"font-family:Verdana,Geneva,sans-serif"><b><a href=3D"https://www.=
+youtube.com/watch?v=3DuW1NFJOq7Mk" target=3D"_blank"><span style=3D"color:#=
+ffffff">Learn more about Capgemini=E2=80=99s rich history.</span></a></b></=
+span></u></span></p>
+			</td>
+			<td>
+			<p style=3D"text-align:center"><a href=3D"https://www.youtube.com/watch?=
+v=3D69OJ8L9uFms" target=3D"_blank"><img alt=3D"" src=3D"https://performance=
+manager5.successfactors.eu/C0001123183P/Img8.png" style=3D"height:276.0px;w=
+idth:333.0px"></a></p>
+
+			<p style=3D"text-align:center"><span style=3D"font-size:12.0px"><u><b><s=
+pan style=3D"font-family:Verdana,Geneva,sans-serif"><a href=3D"https://www.=
+youtube.com/watch?v=3D69OJ8L9uFms" target=3D"_blank"><span style=3D"color:#=
+ffffff">Aiman Ezzat, Group CEO, discusses our H1 2020 results</span></a><sp=
+an style=3D"color:#ffffff">.</span></span></b></u></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td>
+			<p style=3D"text-align:center"><a href=3D"https://www.youtube.com/watch?=
+v=3DSc42UJw_TVw&amp;feature=3Dyoutu.be" target=3D"_blank"><img alt=3D"" src=
+=3D"https://performancemanager5.successfactors.eu/C0001123183P/Img9.png" st=
+yle=3D"height:276.0px;width:333.0px"></a></p>
+
+			<p style=3D"text-align:center"><span style=3D"font-size:12.0px"><u><span=
+ style=3D"font-family:Verdana,Geneva,sans-serif"><b><a href=3D"https://www.=
+youtube.com/watch?v=3DSc42UJw_TVw&amp;feature=3Dyoutu.be" target=3D"_blank"=
+><span style=3D"color:#ffffff">Discover Next =E2=80=93 Our digital learning=
+ platform.</span></a></b></span></u></span></p>
+			</td>
+			<td>
+			<p style=3D"text-align:center"><a href=3D"https://www.youtube.com/watch?=
+v=3DNO9TExCvb_c&amp;feature=3Demb_logo" target=3D"_blank"><img alt=3D"" src=
+=3D"https://performancemanager5.successfactors.eu/C0001123183P/Img10.png" s=
+tyle=3D"height:276.0px;width:333.0px"></a></p>
+
+			<p style=3D"text-align:center"><span style=3D"font-size:12.0px"><u><span=
+ style=3D"font-family:Verdana,Geneva,sans-serif"><b><a href=3D"https://www.=
+youtube.com/watch?v=3DNO9TExCvb_c&amp;feature=3Demb_logo" target=3D"_blank"=
+><span style=3D"color:#ffffff">Our global initiative - Tech4Positive Future=
+s Challenge 2020.</span></a></b></span></u></span></p>
+			</td>
+			<td>
+			<p style=3D"text-align:center"><a href=3D"http://api.momindum.com/watch/=
+uD3ia9PaDsqdqC8aXdJqEgJruhNOLoP7Knk4Z9QLcxE." target=3D"_blank"><img alt=3D=
+"" src=3D"https://performancemanager5.successfactors.eu/C0001123183P/Img11.=
+png" style=3D"height:274.0px;width:333.0px"></a></p>
+
+			<p style=3D"text-align:center"><span style=3D"font-size:12.0px"><u><span=
+ style=3D"font-family:Verdana,Geneva,sans-serif"><b><a href=3D"https://api.=
+momindum.com/watch/uD3ia9PaDsqdqC8aXdJqEgJruhNOLoP7Knk4Z9QLcxE." target=3D"=
+_blank"><span style=3D"color:#ffffff">Know more about our group-wide initia=
+tives to fight against COVID-19</span></a></b></span></u></span></p>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=3D"width:1000=
+.0px">
+	<tbody>
+		<tr>
+			<td><img alt=3D"" src=3D"https://performancemanager5.successfactors.eu/C=
+0001123183P/banner_strip_4.png" style=3D"height:47.0px;width:1000.0px"></td=
+>
+		</tr>
+	</tbody>
+</table>
+
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=3D"width:750.=
+0px">
+	<tbody>
+		<tr>
+			<td style=3D"padding:0.0in 0.0in 0.0in 0.0in">
+			<p>=C2=A0</p>
+
+			<p style=3D"text-align:justify"><span style=3D"font-size:10.0px"><span s=
+tyle=3D"font-family:Verdana,Geneva,sans-serif"><b><b>Love Your Career, Ace =
+Your Career at Capgemini</b></b><br>
+			Kindly review your offer and onboarding documentation on our portal, and=
+ inform us directly on the portal of your decision within the next seven ca=
+lendar days.</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style=3D"padding:0.0in 0.0in 0.0in 0.0in">
+			<p style=3D"text-align:justify"><span style=3D"font-size:10.0px"><span s=
+tyle=3D"font-family:Verdana,Geneva,sans-serif">To accept your Capgemini off=
+er, please follow the steps below:</span></span></p>
+
+			<ul>
+				<li style=3D"text-align:justify"><span style=3D"font-size:10.0px"><span=
+ style=3D"font-family:Verdana,Geneva,sans-serif">Review your offer and cont=
+ract of employment on our portal by accessing the link below</span></span><=
+/li>
+				<li style=3D"text-align:justify"><span style=3D"font-size:10.0px"><span=
+ style=3D"font-family:Verdana,Geneva,sans-serif">To accept your offer, you =
+can follow the steps in the portal</span></span></li>
+				<li style=3D"text-align:justify"><span style=3D"font-size:10.0px"><span=
+ style=3D"font-family:Verdana,Geneva,sans-serif">Once you enter the portal,=
+ select=C2=A0<b>Options &gt; My Offers &gt; Accept=C2=A0</b>your Capgemini =
+employment offer</span></span></li>
+			</ul>
+
+			<p style=3D"text-align:justify">=C2=A0</p>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=3D"width:750.=
+0px">
+	<tbody>
+		<tr>
+			<td><img alt=3D"" src=3D"https://performancemanager5.successfactors.eu/C=
+0001123183P/Img13.gif" style=3D"height:153.0px;width:300.0px"></td>
+			<td>
+			<p>=C2=A0</p>
+
+			<p><span style=3D"font-size:10.0px"><span style=3D"font-family:Verdana,G=
+eneva,sans-serif"><b><u style=3D"color:#ff6327;text-decoration:underline"><=
+a href=3D"https://career5.successfactors.eu/career?company=3DC0001123183P&a=
+mp;clientId=3Djobs2web&amp;lang=3Den_US&amp;navBarLevel=3DMY_PROFILE" style=
+=3D"color:#0563c1;text-decoration:underline" target=3D"_blank"><span style=
+=3D"color:#e67e22">Please login to the Careers Site to view your offer.</sp=
+an></a></u></b></span></span></p>
+
+			<p><span style=3D"font-size:10.0px"><span style=3D"font-family:Verdana,G=
+eneva,sans-serif"><b>Username:</b>=C2=A0</span></span><span style=3D"font-f=
+amily:Verdana,Geneva,sans-serif"><span style=3D"font-size:10.0px"><a href=
+=3D"mailto:Maheshbiradarwe@gmail.com" target=3D"_blank">Maheshbiradarwe@gma=
+il.com</a></span></span><br>
+			<br>
+			<span style=3D"font-size:10.0px"><span style=3D"font-family:Verdana,Gene=
+va,sans-serif"><b>Password:</b>=C2=A0Click=C2=A0<a href=3D"https://career5.=
+successfactors.eu/career?career_company=3DC0001123183P&amp;loginFlowRequire=
+d=3Dtrue&amp;login_ns=3Dforgot_pwd" style=3D"color:#0563c1;text-decoration:=
+underline" target=3D"_blank">here</a>=C2=A0to reset your password. (Please =
+use this option to recover your account if you forget your password.</span>=
+</span></p>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=3D"width:750.=
+0px">
+	<tbody>
+		<tr>
+			<td>
+			<p>=C2=A0</p>
+
+			<p><span style=3D"font-size:10.0px"><span style=3D"font-family:Verdana,G=
+eneva,sans-serif"><b>Note:</b>=C2=A0Your name mentioned in the offer letter=
+ will be used to create your employee records in Capgemini, and the same wi=
+ll be continued for all communication purposes. In case you need a change i=
+n the name, please contact your recruiter before your date of joining. Plea=
+se note that post joining, no changes can be made. The name provided by you=
+ should match with the necessary documents such as educational certificates=
+, experience letters, relieving letters, PAN card, Passport, etc.</span></s=
+pan></p>
+
+			<p><span style=3D"font-size:10.0px"><span style=3D"font-family:Verdana,G=
+eneva,sans-serif">Should you have any questions, please contact=C2=A0<span>=
+Preeti Mishra</span>=C2=A0=C2=A0OR=C2=A0<a href=3D"mailto:cg_interview_help=
+desk.in@capgemini.com" style=3D"color:#0563c1;text-decoration:underline" ta=
+rget=3D"_blank">cg_interview_helpdesk.in@capgemini.com</a></span></span></p=
+>
+
+			<p><span style=3D"font-size:10.0px"><span style=3D"font-family:Verdana,G=
+eneva,sans-serif">We would appreciate it if you could share feedback about =
+your interview process and interaction with our hiring team. Please=C2=A0<a=
+ href=3D"http://bit.ly/2UfVQs5" style=3D"color:#0563c1;text-decoration:unde=
+rline" target=3D"_blank">click here to start the survey</a>=C2=A0and on =E2=
+=80=98Submit Interview=E2=80=99 to share your interview experience with us.=
+=C2=A0<b>Kindly note that all Glassdoor reviews are anonymous.</b></span></=
+span></p>
+
+			<p><span style=3D"font-size:10.0px"><span style=3D"font-family:Verdana,G=
+eneva,sans-serif">A career with us is an opportunity to find purpose in you=
+r passion. It is a chance to grow and develop into an ace at what you do.</=
+span></span></p>
+
+			<p><span style=3D"font-size:10.0px"><span style=3D"font-family:Verdana,G=
+eneva,sans-serif">We look forward to welcoming you as an invaluable member =
+of our team.</span></span></p>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+<p style=3D"text-align:justify"><span style=3D"font-size:10.0px"><span styl=
+e=3D"font-family:Verdana,Geneva,sans-serif">Regards,</span></span></p>
+
+<p><span style=3D"font-size:12.0px"><span style=3D"font-family:Verdana,Gene=
+va,sans-serif"><b>Talent Acquisition Team - India</b></span></span></p>
+
+<p><span style=3D"font-size:12.0px"><span style=3D"font-family:Verdana,Gene=
+va,sans-serif"><img alt=3D"" src=3D"https://performancemanager5.successfact=
+ors.eu/C0001123183P/CGlogo.jpg" style=3D"height:56.0px;width:190.0px"></spa=
+n></span></p>
+
+<p><span style=3D"font-size:12.0px"><span style=3D"font-family:Verdana,Gene=
+va,sans-serif"><b>Stay Connected. Stay Updated.</b></span></span></p>
+
+<p><a href=3D"https://www.facebook.com/CapgeminiIndia/" target=3D"_blank"><=
+img alt=3D"" src=3D"https://performancemanager5.successfactors.eu/C00011231=
+83P/s1.jpg"></a>=C2=A0<a href=3D"https://twitter.com/CapgeminiIndia" target=
+=3D"_blank"><img alt=3D"" src=3D"https://performancemanager5.successfactors=
+.eu/C0001123183P/s2.jpg"></a>=C2=A0<a href=3D"https://www.linkedin.com/comp=
+any/capgemini/" target=3D"_blank"><img alt=3D"" src=3D"https://performancem=
+anager5.successfactors.eu/C0001123183P/s3.jpg"></a>=C2=A0<a href=3D"https:/=
+/www.youtube.com/channel/UCRHMhVXEsPtTQ60dkxg8VXw" target=3D"_blank"><img a=
+lt=3D"" src=3D"https://performancemanager5.successfactors.eu/C0001123183P/s=
+4.jpg"></a>=C2=A0<a href=3D"https://soundcloud.com/capgemini" target=3D"_bl=
+ank"><img alt=3D"" src=3D"https://performancemanager5.successfactors.eu/C00=
+01123183P/s5.jpg"></a>=C2=A0<a href=3D"https://www.instagram.com/capgeminii=
+ndia/" target=3D"_blank"><img alt=3D"" src=3D"https://performancemanager5.s=
+uccessfactors.eu/C0001123183P/s6.jpg"></a>=C2=A0<a href=3D"https://www.slid=
+eshare.net/capgemini" target=3D"_blank"><img alt=3D"" src=3D"https://perfor=
+mancemanager5.successfactors.eu/C0001123183P/s7.jpg"></a>=C2=A0<a href=3D"h=
+ttps://www.glassdoor.co.in/Reviews/Capgemini-India-Reviews-EI_IE3803.0,9_IL=
+.10,15_IN115.htm" target=3D"_blank"><img alt=3D"" src=3D"https://performanc=
+emanager5.successfactors.eu/C0001123183P/s8.jpg"></a></p>
+
+<p><span style=3D"font-size:7.5pt"><span style=3D"font-family:&#39;Verdana&=
+#39;,sans-serif">=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =
+=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=
+=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =
+=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=
+=A0<a href=3D"https://www.capgemini.com/in-en/recruitment-disclaimer/" styl=
+e=3D"color:#0563c1;text-decoration:underline" target=3D"_blank">Click here<=
+/a>=C2=A0to view the recruitment disclaimer.<br>
+=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=
+=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =
+=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=
+=A0 =C2=A0 =C2=A0 =C2=A0To view our candidate privacy notification please=
+=C2=A0<a href=3D"http://panela.capgemini.com/ltrack?g=3D0&amp;id=3DK0tUAQZU=
+AAVQVU9UBgkDBlYGDUQ=3DBgIABFEACUtDQwYOClkAQ1dKRHMCBEMDU1RaWAwdVldZ&amp;clie=
+nt=3D8255&amp;test=3D1&amp;c=3D0000" style=3D"color:#0563c1;text-decoration=
+:underline" target=3D"_blank">click here</a></span></span><br>
+=C2=A0</p>
+</div></div>
+
+--0000000000005f9baa060d08e7f1--

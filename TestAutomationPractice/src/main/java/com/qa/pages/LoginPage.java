@@ -1,0 +1,45 @@
+package com.qa.pages;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
+
+public class LoginPage {
+	
+	private WebDriver driver;
+	private By emailId=By.id("ap_email");
+	private By paswword=By.id("ap_password");
+	private By continueButton=By.id("continue");
+	private By signInButton=By.id("nav-link-accountList-nav-line-1");
+	private By signInContinue=By.id("signInSubmit");
+	private By SignIndropDown=By.className("nav-line-1-container");
+	
+	public LoginPage(WebDriver driver){
+		this.driver=driver;
+		
+	}
+	
+	//page actions
+	public String getPageTitle() {
+		return driver.getTitle();
+	}
+	
+	public void continueSignIn() {
+		driver.findElement(signInContinue);
+	
+	}
+	
+	public void enterCredentials(String username, String password) {
+		driver.findElement(emailId).sendKeys(username);
+		driver.findElement(continueButton).click();
+		driver.findElement(paswword).sendKeys(password);
+	}
+
+	public void clickonSignIn() {
+		
+		driver.findElement(signInButton).click();
+	}
+	
+	
+}
